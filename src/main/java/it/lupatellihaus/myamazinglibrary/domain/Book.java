@@ -20,6 +20,8 @@ public class Book {
     private Date endDate;
     @Enumerated(EnumType.STRING)
     private Status status;
+
+    private String imageUrl;
     @ManyToOne
     @JoinColumn(name = "author_id")
     private Author author;
@@ -72,7 +74,7 @@ public class Book {
         this.publisher = publisher;
     }
 
-    @Column(name = "edition_year")
+    @Column(name = "publication_year")
     public Integer getPublicationYear() {
         return publicationYear;
     }
@@ -89,6 +91,7 @@ public class Book {
         this.pages = pages;
     }
 
+    @Column(name = "start_date")
     public Date getStartDate() {
         return startDate;
     }
@@ -97,6 +100,7 @@ public class Book {
         this.startDate = startDate;
     }
 
+    @Column(name = "end_date")
     public Date getEndDate() {
         return endDate;
     }
@@ -111,6 +115,15 @@ public class Book {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    @Column(name = "image_url")
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
 
