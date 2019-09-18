@@ -1,5 +1,8 @@
 package it.lupatellihaus.myamazinglibrary.wrapper;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ItemWrapper {
 
 	private String kind;

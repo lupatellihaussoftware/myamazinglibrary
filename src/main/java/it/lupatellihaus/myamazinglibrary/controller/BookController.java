@@ -1,9 +1,12 @@
 package it.lupatellihaus.myamazinglibrary.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import it.lupatellihaus.myamazinglibrary.domain.Book;
 import it.lupatellihaus.myamazinglibrary.repository.BookRepository;
 import it.lupatellihaus.myamazinglibrary.service.BookService;
+import it.lupatellihaus.myamazinglibrary.wrapper.BookWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -26,9 +29,8 @@ public class BookController {
 
     @GetMapping(path = "/isbn/{isbn}")
     public @ResponseBody
-    JsonNode getBookByIsbn(@PathVariable String isbn) {
-        RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.getForObject("https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn, JsonNode.class);
+    BookWrapper getBookByIsbn(@PathVariable String isbn) throws JsonProcessingException {
+        return bookService.getBookByIsbn(isbn);
     }
 
     @PostMapping(path = "/isbn/{isbn}")
