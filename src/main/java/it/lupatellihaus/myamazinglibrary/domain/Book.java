@@ -89,6 +89,7 @@ public class Book {
         this.pages = pages;
     }
 
+    @Column(name = "start_date")
     public Date getStartDate() {
         return startDate;
     }
@@ -97,6 +98,7 @@ public class Book {
         this.startDate = startDate;
     }
 
+    @Column(name = "end_date")
     public Date getEndDate() {
         return endDate;
     }
