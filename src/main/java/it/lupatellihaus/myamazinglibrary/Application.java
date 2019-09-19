@@ -14,6 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class Application {
 
     public static void main(String[] args) {
+        System.setProperty("server.servlet.context-path", "/25readers");
         SpringApplication.run(Application.class, args);
     }
 }
