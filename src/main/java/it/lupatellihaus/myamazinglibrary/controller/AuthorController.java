@@ -24,7 +24,8 @@ public class AuthorController {
         return authorService.createAuthor(authorInput);
     }
 
-    @GetMapping(path = "/all")
+    @RequestMapping(path = "/authors",method = RequestMethod.GET)
+//    @GetMapping(path = "/all")
     public @ResponseBody
     Iterable<Author> getAllAuthors() {
         // This returns a JSON or XML with the users

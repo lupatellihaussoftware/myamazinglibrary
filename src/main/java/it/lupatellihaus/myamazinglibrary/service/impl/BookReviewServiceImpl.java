@@ -29,7 +29,7 @@ public class BookReviewServiceImpl implements BookReviewService {
     public BookReview createBookReviewByIsbn(BookReview requestData, String isbn) throws Exception {
         Optional<Book> oBook = bookRepository.findOneByIsbn(isbn);
 
-        if(!oBook.isPresent()) throw new Exception("book with isbn: " + isbn + "not found");
+        if(!oBook.isPresent()) throw new Exception("book with isbn: " + isbn + " not found");
         BookReview bookReview = new BookReview();
         bookReview.setRating(requestData.getRating());
         bookReview.setUser(requestData.getUser());

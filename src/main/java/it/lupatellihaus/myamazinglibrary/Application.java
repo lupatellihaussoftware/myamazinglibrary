@@ -2,6 +2,7 @@ package it.lupatellihaus.myamazinglibrary;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableSwagger2
@@ -11,7 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 //@EnableJpaRepositories(basePackages = "it.lupatellihaus.myamazinglibrary.repository")
 //@EntityScan(basePackages = "it.lupatellihaus.myamazinglibrary.
 // ")
-public class Application {
+public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         System.setProperty("server.servlet.context-path", "/25readers");
